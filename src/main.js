@@ -1,28 +1,28 @@
-import './style.css'
-import markdownit from 'markdown-it';
+import "./style.css";
+import markdownit from "markdown-it";
 
 // TODO:
 // create a post list
 // add front matter parsing
 // break this script into multiple modules
 
-const md = markdownit()
+const md = markdownit();
 const motdArray = [
-  'Hello',
-  'These are some messages of the day',
-  'Used as subtitles on the homepage',
-  'Add some funny ones here later',
-  'This is a homepage',
-]
-const posts = import.meta.glob('./posts/*.md', {
-  as: 'raw',
+  "Hello",
+  "These are some messages of the day",
+  "Used as subtitles on the homepage",
+  "Add some funny ones here later",
+  "This is a homepage",
+];
+const posts = import.meta.glob("./posts/*.md", {
+  as: "raw",
   eager: true,
 });
 console.log(posts);
 
-const subtitleElement = document.getElementById('subtitle');
-const navigationButtons = document.getElementsByClassName('siteNavigation');
-const contentDiv = document.getElementById('content');
+const subtitleElement = document.getElementById("subtitle");
+const navigationButtons = document.getElementsByClassName("siteNavigation");
+const contentDiv = document.getElementById("content");
 
 let activeContent = null;
 
@@ -32,7 +32,7 @@ initializeNavigation();
 
 function initializeNavigation() {
   for (let i = 0; i < navigationButtons.length; i++) {
-    navigationButtons[i].addEventListener('click', onNavigationClick);
+    navigationButtons[i].addEventListener("click", onNavigationClick);
   }
 }
 
@@ -51,7 +51,7 @@ function onNavigationClick(event) {
 }
 
 function clearActiveContent() {
-  contentDiv.innerHTML = '';
+  contentDiv.innerHTML = "";
   activeContent = null;
 }
 
