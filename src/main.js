@@ -3,7 +3,6 @@ import markdownit from "markdown-it";
 
 // TODO:
 // create a post list
-// add front matter parsing
 // break this script into multiple modules
 
 const md = markdownit();
